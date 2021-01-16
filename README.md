@@ -3,7 +3,7 @@
 <ol>
 <li>
 
-[3D random walk: 3D_random walk.ipynb](https://colab.research.google.com/github/jae1001/PartII_C1/blob/main/3D random walk.ipynb)
+[3D random walk: 3D_random walk.ipynb](https://colab.research.google.com/github/jae1001/PartII_C1/blob/main/3D_random_walk.ipynb)
 
 **Description**
 
