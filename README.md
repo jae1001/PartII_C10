@@ -1,4 +1,4 @@
-## iPython Notebooks for Part II Materials Science C10: Polymers
+## iPython Notebooks & Scripts for Part II Materials Science C10: Polymers
 
 <ol>
 <li>
