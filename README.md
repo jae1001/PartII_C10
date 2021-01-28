@@ -37,8 +37,8 @@ present in same directory as script is loaded from.
 
 **Usage**
 
-Unpack raw data from "[Ex. Class Q5.zip]("https://github.com/jae1001/PartII_C10/edit/main/ archive and put in same directory as script. Load the 
-script into Gnuplot ([gnuplot.info](http://gnuplot.info/)).
+Unpack raw data from "[Ex. Class Q5.zip]("https://github.com/jae1001/PartII_C10/blob/main/Ex.%20Class%20Q5.zip")
+archive and put in same directory as script. Load the script into Gnuplot ([gnuplot.info](http://gnuplot.info/)).
 
 **Credits**
 
