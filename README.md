@@ -23,3 +23,24 @@ so do not expect good covergence.
 
 Original Python code written by James Elliott
 </li>
+
+
+<li>
+
+[script.plt](https://colab.research.google.com/github/jae1001/PartII_C10/blob/main/script.plt)
+
+**Description**
+
+Gnuplot script to fit triple-Gaussian (+background) curve to azimuthally integrated X-ray
+scattering from semi-crystalline polyethylene sample. Relies on data file "pe_rect.txt" being
+present in same directory as script is loaded from.
+
+**Usage**
+
+Unpack raw data from "Ex. Class Q5.zip" archive and put in same directory as script. Load the 
+script into Gnuplot ([gnuplot.info](http://gnuplot.info/).
+
+**Credits**
+
+Original Gnuplot script written by James Elliott
+</li>
