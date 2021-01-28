@@ -27,7 +27,7 @@ Original Python code written by James Elliott
 
 <li>
 
-[script.plt](https://colab.research.google.com/github/jae1001/PartII_C10/blob/main/script.plt)
+[script.plt](https://github.com/jae1001/PartII_C10/edit/main/script.plt)
 
 **Description**
 
@@ -38,7 +38,7 @@ present in same directory as script is loaded from.
 **Usage**
 
 Unpack raw data from "Ex. Class Q5.zip" archive and put in same directory as script. Load the 
-script into Gnuplot ([gnuplot.info](http://gnuplot.info/).
+script into Gnuplot ([gnuplot.info](http://gnuplot.info/)).
 
 **Credits**
 
