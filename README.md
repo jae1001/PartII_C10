@@ -19,6 +19,9 @@ number of configurations (M) to average over. Since we are using end-to-end dist
 expect large fluctations in sqrt(N), which are exacerbated by the use of a cubic lattice,
 so do not expect good covergence.
 
+Note added 1/11/2023: Added Python script "random walk.py" (requires standalone Python3
+installation withvmatplotlib installed) that produces histogram.
+
 **Credits**
 
 Original Python code written by James Elliott
