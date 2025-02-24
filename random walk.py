@@ -4,11 +4,11 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import random
 
-M = 500      # Number of chains to average over (the higher the better)
-N = 10000   # Number of monomer segments in each chain (>100 for random walk model to apply)
+M = 1000   # Number of chains to average over (the higher the better)
+N = 1000   # Number of monomer segments in each chain (>100 for random walk model to apply)
 num_chains_to_visualize = 10
 
-r_distances = []  # List to store the final distances
+sq_distances = []  # List to store the final distances
 
 mpl.rcParams['legend.fontsize'] = 8
 
@@ -35,11 +35,12 @@ for i in range(M):
         ax.scatter(0, 0, 0, c='b', marker='x')             # Start point
         ax.scatter(x[-1], y[-1], z[-1], c='b', marker='o') # End point
     
-    r_distance = math.sqrt(math.pow(x[-1],2) + math.pow(y[-1],2) + math.pow(z[-1],2))
-    r_distances.append(r_distance)
+    sq_distance = (math.pow(x[-1],2) + math.pow(y[-1],2) + math.pow(z[-1],2))
+    sq_distances.append(sq_distance)
 
 # Calculate averages
-r_avg = sum(r_distances) / M
+rms_avg = math.sqrt(sum(sq_distances)) / M
+r_distances = [math.sqrt(d) for d in sq_distances]
 r2_avg = sum(math.pow(d, 2) for d in r_distances) / M
 
 # Create a histogram
