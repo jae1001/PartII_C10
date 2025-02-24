@@ -70,5 +70,29 @@ axes[1].set_ylabel("Energy (in units of β)")
 axes[1].set_title("Energy Shift: Meta-Substituted Structure")
 axes[1].grid(True)
 
+def compute_energy_difference(H):
+    # Compute energies at 0 and 90 degrees
+    energies_0 = compute_shifted_energies(H, 0)
+    energies_90 = compute_shifted_energies(H, 90)
+    
+    # Calculate total energy at each angle
+    total_energy_0 = np.sum(energies_0[:len(energies_0)//2])  # Assuming half-filling
+    total_energy_90 = np.sum(energies_90[:len(energies_90)//2])
+    
+    # Calculate energy difference
+    return total_energy_90 - total_energy_0
+
+# Construct Hamiltonians
+H_original = construct_hamiltonian(meta_substituted=False)
+H_meta_substituted = construct_hamiltonian(meta_substituted=True)
+
+# Compute energy differences
+energy_diff_original = compute_energy_difference(H_original)
+energy_diff_meta = compute_energy_difference(H_meta_substituted)
+
+# Print results
+print(f"Energy difference (90° - 0°) for original 3-ring structure: {energy_diff_original:.4f}β")
+print(f"Energy difference (90° - 0°) for meta-substituted structure: {energy_diff_meta:.4f}β")
+
 plt.tight_layout()
 plt.show()
