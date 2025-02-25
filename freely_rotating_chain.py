@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+#from mpl_toolkits.mplot3d import Axes3D
 import statistics
 from numba import jit
 
@@ -234,8 +234,8 @@ def plot_the_chain():
     plt.show()
 
 # Run the test
-test_end_to_end_distance()
+#test_end_to_end_distance()
 
 # Plot the chain
-#plot_the_chain()
+plot_the_chain()
 

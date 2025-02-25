@@ -22,24 +22,24 @@ def construct_hamiltonian(meta_substituted=False,para_meta_substituted=False):
             H[offset + (i + 1) % 6, offset + i] = beta
     
     # Maintain original para connections (C1 to C4)
-    H[1, 10] = beta
-    H[10, 1] = beta
+    H[4, 7] = beta
+    H[7, 4] = beta
     
     if meta_substituted:
         # Add meta-substituted connections (C3 and C6 to new rings)
-        H[3, 19] = beta  # C3 to new benzene ring
-        H[19, 3] = beta
-        H[6, 25] = beta  # C6 to another new benzene ring
-        H[25, 6] = beta
+        H[9, 19] = beta  # C3 to new benzene ring
+        H[19, 9] = beta
+        H[12, 25] = beta  # C6 to another new benzene ring
+        H[25, 12] = beta
 
     if para_meta_substituted:
         # Add para= meta-substituted connections (C3, C5 and C6 to new rings)
-        H[3, 19] = beta  # C3 to new benzene ring
-        H[19, 3] = beta
-        H[6, 25] = beta  # C6 to another new benzene ring
-        H[25, 6] = beta
-        H[5, 31] = beta  # C5 to another new benzene ring
-        H[31, 5] = beta
+        H[9, 19] = beta  # C3 to new benzene ring
+        H[19, 9] = beta
+        H[12, 25] = beta  # C6 to another new benzene ring
+        H[25, 12] = beta
+        H[11, 31] = beta  # C5 to another new benzene ring
+        H[31, 11] = beta
 
     #print(H)
     
@@ -52,8 +52,8 @@ def compute_shifted_energies(H, theta_deg):
     
     # Modify Hamiltonian for rotation of C4-linked benzene ring
     H_rotated = H.copy()
-    H_rotated[10, 1] = beta_eff  # Adjust para linkage
-    H_rotated[1, 10] = beta_eff
+    H_rotated[4, 7] = beta_eff  # Adjust para linkage
+    H_rotated[7, 4] = beta_eff
     
     # Solve for eigenvalues
     eigenvalues, _ = scipy.linalg.eigh(H_rotated)
