@@ -20,7 +20,32 @@ expect large fluctations in sqrt(N), which are exacerbated by the use of a cubic
 so do not expect good covergence.
 
 Note added 1/11/2023: Added Python script "random walk.py" (requires standalone Python3
-installation withvmatplotlib installed) that produces histogram.
+installation withvmatplotlib installed) that produces histogram and compares with the 
+analytical result.
+
+**Credits**
+
+Original Python code written by James Elliott
+</li>
+
+[Freely rotating chain: freely_rotating_chain.py]
+
+**Description**
+
+Off-lattice Monte Carlo polymer chain model to demonstrate scaling behaviour
+of a non-self avoiding (ideal) freely-rotating chain. For such a chain, the root-mean-square
+end-to-end distance of an "long" chain (N>100) of segments of unit length should be equal
+to sqrt[(1+cos(theta))/(1-cos(theta))]*sqrt(N), whhere theta is the fixed valence angle.
+
+**Usage**
+
+User-changeable parameters are the number of monomer segments in each chain (N), and
+number of configurations (M) to average over. Since we are using end-to-end distance, we
+expect large fluctations in sqrt(N), so a large number of monomer segments and configurations
+(>1000) are recommended.
+
+Note: this Python script requires standalone Python3 installation with matplotlib, statistics and
+numpy packages installed. Numba package is optional, but recommended for speed-up.
 
 **Credits**
 
