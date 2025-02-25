@@ -1,8 +1,8 @@
 import matplotlib as mpl
 import math
-#from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import random
+import numpy as np
 
 M = 1000   # Number of chains to average over (the higher the better)
 N = 1000   # Number of monomer segments in each chain (>100 for random walk model to apply)
@@ -46,7 +46,19 @@ r2_avg = sum(math.pow(d, 2) for d in r_distances) / M
 # Create a histogram
 plt.figure()
 plt.hist(r_distances, bins=20, edgecolor='black')
-plt.axvline(x=math.sqrt(N), color='red', linestyle='dashed', linewidth=2, label='Theoretical RMS')  # Theoretical value
+plt.axvline(x=math.sqrt(N), color='red', linestyle='dashed', linewidth=2, label='Theoretical RMS')
+
+# Add theoretical distribution curve
+# Scale the theoretical curve to match histogram height
+counts, bins = np.histogram(r_distances, bins=20)
+bin_width = bins[1] - bins[0]
+scaling_factor = len(r_distances) * bin_width
+
+r = np.linspace(0, max(r_distances), 100)
+mean_r2 = N # Theoretical mean square end-to-end distance
+theoretical_dist = (3/(2*np.pi*mean_r2))**(3/2) * 4*np.pi*r**2 * np.exp(-3*r**2/(2*mean_r2))
+plt.plot(r, theoretical_dist * scaling_factor, 'b', label='Theoretical Distribution')
+
 plt.title('Histogram of Root Mean Square Distances')
 plt.xlabel('Distance')
 plt.ylabel('Frequency')
