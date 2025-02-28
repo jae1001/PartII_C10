@@ -234,8 +234,8 @@ def plot_the_chain():
     plt.show()
 
 # Run the test
-test_end_to_end_distance()
+#test_end_to_end_distance()
 
 # Plot the chain
-#plot_the_chain()
+plot_the_chain()
 
